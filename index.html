@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Full Screen Dropdown Tutorial | TheCodeBlock</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <!--Remove this style-->
+    <style>
+        .back{
+            text-align:center; 
+            margin-bottom:10px; 
+            font-weight:bold;
+        }
+        .back a{
+            color: #fff;
+        }
+    </style>
+    <!--Remove this style-->
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Company</a>
+                </li>
+                <li><a href="#">Services</a>
+                </li>
+                <li><a href="#">Social</a>
+                </li>
+                <li><a href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="button">
+                <a href="#">
+                    <img class="btn-open" src="btn-hamburger.png" alt="">
+                    <img class="btn-close" src="btn-close.png" alt="">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="overlay">
+        <div class="wrap">
+            <ul class="wrap-nav">
+                <li><a href="#">Company</a>
+                    <ul>
+                        <li><a href="#">About</a>
+                        </li>
+                        <li><a href="#">Blog</a>
+                        </li>
+                        <li><a href="#">Workplace</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Web Design</a>
+                        </li>
+                        <li><a href="#">Consultanct</a>
+                        </li>
+                        <li><a href="#">Products</a>
+                        </li>
+                        <li><a href="#">Centers</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Social</a>
+                    <ul>
+                        <li><a href="#">Facebook</a>
+                        </li>
+                        <li><a href="#">Twitter</a>
+                        </li>
+                        <li><a href="#">Google Plus</a>
+                        </li>
+                        <li><a href="#">LinkedIn</a>
+                        </li>
+                        <li><a href="#">WhatsApp</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a>
+                    <ul>
+                        <li><a href="#">Address</a>
+                        </li>
+                        <li><a href="#">Phone</a>
+                        </li>
+                        <li><a href="#">Email</a>
+                        </li>
+                        <li><a href="#">Map</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="social">
+               
+               <!--Remove this-->
+               <div class="back"><a href="http://thecodeblock.com/full-screen-overlay-navigation/">Back to article</a></div>
+               <!--Remove this-->
+               
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, recusandae, magnam, sapiente, iure deleniti repudiandae est tempora repellat fugiat aliquid nihil assumenda non placeat cum minus aut qui. Ipsa, aut.
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.btn-close').fadeOut(200);
+            var open = false;
+            $('.button a').on('click', function () {
+                if (open == false) {
+                    $('.overlay, .btn-close').fadeIn(200);
+                    $('nav ul li, .btn-open').fadeOut(200);
+                    open = true;
+                } else {
+                    $('.overlay, .btn-close').fadeOut(200)
+                    $('nav ul li, .btn-open').fadeIn(200);
+                    open = false;
+                }
+            });
+            $('.overlay').on('mouseup', function () {
+                $('.overlay, .btn-close').fadeOut(200);
+                $('nav ul li, .btn-open').fadeIn(200);
+                open = false;
+            });
+            $('.wrap').on('mouseup', function () {
+                return false;
+            });
+        })
+    </script>
+
+</body>
+
+</html>
